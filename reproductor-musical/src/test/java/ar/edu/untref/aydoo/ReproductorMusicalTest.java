@@ -4,14 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ReproductorMusicalTest {
 
+    private ReproductorMusical reproductorMusical;
+
+    @Before
+    public void inicializarReproductorMusical() {
+        reproductorMusical = new ReproductorMusical();
+    }
+
     @Test
     public void agregarUnaCancionAlReproductorLaIncorporaASuLista() {
 
-        ReproductorMusical reproductorMusical = new ReproductorMusical();
         Cancion cancionParaMiMuerte = new Cancion();
 
         reproductorMusical.agregarCancion(cancionParaMiMuerte);
@@ -23,7 +30,6 @@ public class ReproductorMusicalTest {
     @Test
     public void agregarUnaListaDeCancionesAlReproductorLasIncorporaASuLista() {
 
-        ReproductorMusical reproductorMusical = new ReproductorMusical();
         List<Cancion> listaDeCanciones = new ArrayList<>();
         Cancion cancionParaMiMuerte = new Cancion();
         Cancion miUnicornioAzul = new Cancion();
