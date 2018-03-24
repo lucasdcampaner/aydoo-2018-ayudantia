@@ -19,7 +19,7 @@ public class ReproductorMusicalTest {
     @Test
     public void agregarUnaCancionAlReproductorLaIncorporaASuLista() {
 
-        Cancion cancionParaMiMuerte = new Cancion();
+        Cancion cancionParaMiMuerte = new Cancion(5);
 
         reproductorMusical.agregarCancion(cancionParaMiMuerte);
 
@@ -31,8 +31,8 @@ public class ReproductorMusicalTest {
     public void agregarUnaListaDeCancionesAlReproductorLasIncorporaASuLista() {
 
         List<Cancion> listaDeCanciones = new ArrayList<>();
-        Cancion cancionParaMiMuerte = new Cancion();
-        Cancion miUnicornioAzul = new Cancion();
+        Cancion cancionParaMiMuerte = new Cancion(5);
+        Cancion miUnicornioAzul = new Cancion(3);
         listaDeCanciones.add(cancionParaMiMuerte);
         listaDeCanciones.add(miUnicornioAzul);
 
@@ -44,10 +44,10 @@ public class ReproductorMusicalTest {
     @Test
     public void agregarUnaCancionYUnaListaDeCancionesAlReproductorLasIncorporaASuLista() {
 
-        Cancion cancionDelElegido = new Cancion();
+        Cancion cancionDelElegido = new Cancion(7);
         List<Cancion> listaDeCanciones = new ArrayList<>();
-        Cancion cancionParaMiMuerte = new Cancion();
-        Cancion miUnicornioAzul = new Cancion();
+        Cancion cancionParaMiMuerte = new Cancion(5);
+        Cancion miUnicornioAzul = new Cancion(3);
         listaDeCanciones.add(cancionParaMiMuerte);
         listaDeCanciones.add(miUnicornioAzul);
 
@@ -69,10 +69,8 @@ public class ReproductorMusicalTest {
     public void laDuracionTotalDeReproduccionEsLaSumaDeLasDuracionesDeCadaCancion() {
 
         List<Cancion> listaDeCanciones = new ArrayList<>();
-        Cancion cancionParaMiMuerte = new Cancion();
-        cancionParaMiMuerte.setDuracion(5);
-        Cancion miUnicornioAzul = new Cancion();
-        miUnicornioAzul.setDuracion(3);
+        Cancion cancionParaMiMuerte = new Cancion(5);
+        Cancion miUnicornioAzul = new Cancion(3);
         listaDeCanciones.add(cancionParaMiMuerte);
         listaDeCanciones.add(miUnicornioAzul);
         reproductorMusical.agregarListaDeCanciones(listaDeCanciones);

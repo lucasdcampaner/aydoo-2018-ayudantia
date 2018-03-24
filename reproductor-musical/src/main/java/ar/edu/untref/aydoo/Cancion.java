@@ -2,9 +2,9 @@ package ar.edu.untref.aydoo;
 
 public class Cancion {
 
-    private Integer duracion;
+    private int duracion;
 
-    public void setDuracion(Integer duracion) {
+    public Cancion(int duracion) {
         this.duracion = duracion;
     }
 
