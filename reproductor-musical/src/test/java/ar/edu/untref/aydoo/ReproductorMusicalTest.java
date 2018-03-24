@@ -41,4 +41,20 @@ public class ReproductorMusicalTest {
         Assert.assertEquals(reproductorMusical.obtenerListaDeCanciones().size(), 2);
     }
 
+    @Test
+    public void agregarUnaCancionYUnaListaDeCancionesAlReproductorLasIncorporaASuLista() {
+
+        Cancion cancionDelElegido = new Cancion();
+        List<Cancion> listaDeCanciones = new ArrayList<>();
+        Cancion cancionParaMiMuerte = new Cancion();
+        Cancion miUnicornioAzul = new Cancion();
+        listaDeCanciones.add(cancionParaMiMuerte);
+        listaDeCanciones.add(miUnicornioAzul);
+
+        reproductorMusical.agregarCancion(cancionDelElegido);
+        reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
+
+        Assert.assertEquals(reproductorMusical.obtenerListaDeCanciones().size(), 3);
+    }
+
 }
