@@ -19,4 +19,8 @@ public class ReproductorMusical {
         return listaDeCanciones;
     }
 
+    public void agregarListaDeCanciones(List<Cancion> listaDeCanciones) {
+        this.listaDeCanciones.addAll(listaDeCanciones);
+    }
+
 }
