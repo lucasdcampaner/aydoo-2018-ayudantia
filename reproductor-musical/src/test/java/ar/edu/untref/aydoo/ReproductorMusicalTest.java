@@ -58,6 +58,14 @@ public class ReproductorMusicalTest {
     }
 
     @Test
+    public void laDuracionTotalDeReproduccionEs0CuandoNoHayListaDeCanciones() {
+
+        int duracionTotalDeReproduccion = reproductorMusical.obtenerDuracionTotalDeReproduccion();
+
+        Assert.assertEquals(duracionTotalDeReproduccion, 0);
+    }
+
+    @Test
     public void laDuracionTotalDeReproduccionEsLaSumaDeLasDuracionesDeCadaCancion() {
 
         List<Cancion> listaDeCanciones = new ArrayList<>();
