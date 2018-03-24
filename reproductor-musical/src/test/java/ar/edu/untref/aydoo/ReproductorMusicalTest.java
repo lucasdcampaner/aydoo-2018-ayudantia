@@ -57,4 +57,21 @@ public class ReproductorMusicalTest {
         Assert.assertEquals(reproductorMusical.obtenerListaDeCanciones().size(), 3);
     }
 
+    @Test
+    public void laDuracionTotalDeReproduccionEsLaSumaDeLasDuracionesDeCadaCancion() {
+
+        List<Cancion> listaDeCanciones = new ArrayList<>();
+        Cancion cancionParaMiMuerte = new Cancion();
+        cancionParaMiMuerte.setDuracion(5);
+        Cancion miUnicornioAzul = new Cancion();
+        miUnicornioAzul.setDuracion(3);
+        listaDeCanciones.add(cancionParaMiMuerte);
+        listaDeCanciones.add(miUnicornioAzul);
+        reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
+
+        int duracionTotalDeReproduccion = reproductorMusical.obtenerDuracionTotalDeReproduccion();
+
+        Assert.assertEquals(duracionTotalDeReproduccion, 8);
+    }
+
 }

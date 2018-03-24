@@ -23,4 +23,13 @@ public class ReproductorMusical {
         this.listaDeCanciones.addAll(listaDeCanciones);
     }
 
+    public int obtenerDuracionTotalDeReproduccion() {
+
+        int duracionTotal = 0;
+        for (Cancion cancion: listaDeCanciones) {
+            duracionTotal += cancion.getDuracion();
+        }
+        return duracionTotal;
+    }
+
 }
