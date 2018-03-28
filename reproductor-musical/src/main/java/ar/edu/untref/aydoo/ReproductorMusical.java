@@ -16,7 +16,8 @@ public class ReproductorMusical {
     }
 
     public List<Cancion> obtenerListaDeCanciones() {
-        return listaDeCanciones;
+        List<Cancion> canciones = new ArrayList<>(listaDeCanciones);
+        return canciones;
     }
 
     public void agregarListaDeCanciones(List<Cancion> listaDeCanciones) {
