@@ -55,7 +55,9 @@ public class ReproductorMusicalTest {
         reproductorMusical.agregarCancion(cancionDelElegido);
         reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
 
-        Assert.assertEquals(reproductorMusical.obtenerListaDeCanciones().size(), 3);
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionDelElegido));
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionParaMiMuerte));
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(miUnicornioAzul));
     }
 
     @Test
