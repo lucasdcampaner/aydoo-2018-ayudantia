@@ -33,4 +33,8 @@ public class ReproductorMusical {
         return duracionTotal;
     }
 
+    public boolean tieneLaCancion(Cancion cancion) {
+        return this.listaDeCanciones.contains(cancion);
+    }
+
 }

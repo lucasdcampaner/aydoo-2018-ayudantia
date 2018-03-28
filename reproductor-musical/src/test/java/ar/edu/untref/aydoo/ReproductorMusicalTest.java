@@ -24,7 +24,7 @@ public class ReproductorMusicalTest {
         reproductorMusical.agregarCancion(cancionParaMiMuerte);
 
         Assert.assertNotNull(reproductorMusical.obtenerListaDeCanciones());
-        Assert.assertEquals(reproductorMusical.obtenerListaDeCanciones().size(), 1);
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionParaMiMuerte));
     }
 
     @Test
@@ -38,7 +38,8 @@ public class ReproductorMusicalTest {
 
         reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
 
-        Assert.assertEquals(reproductorMusical.obtenerListaDeCanciones().size(), 2);
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionParaMiMuerte));
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(miUnicornioAzul));
     }
 
     @Test
