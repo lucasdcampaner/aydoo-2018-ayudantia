@@ -1,14 +1,17 @@
 package ar.edu.untref.aydoo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ReproductorMusical {
 
+    private List<Cancion> listaCanciones = new ArrayList<Cancion>();
+
     public void agregarCancion(Cancion cancion) {
-        // TODO Auto-generated method stub
-        
+        listaCanciones.add(cancion);
     }
 
     public boolean tieneLaCancion(Cancion cancion) {
-        // TODO Auto-generated method stub
-        return true;
+        return listaCanciones.contains(cancion);
     }
 }
