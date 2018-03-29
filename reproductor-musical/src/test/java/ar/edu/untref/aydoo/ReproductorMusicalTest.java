@@ -19,7 +19,7 @@ public class ReproductorMusicalTest {
     }
     
     @Test
-    public void noAgregoUnaCancion() {
+    public void noAgregoUnaCancionEntoncesNoExisteEnMiReproductor() {
         
         ReproductorMusical reproductorMusical = new ReproductorMusical();
         Cancion miPerroDinamita = new Cancion();
