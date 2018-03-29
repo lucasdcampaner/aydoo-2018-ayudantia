@@ -14,4 +14,8 @@ public class ReproductorMusical {
     public boolean tieneLaCancion(Cancion cancion) {
         return listaCanciones.contains(cancion);
     }
+
+    public void agregarListaDeCanciones(List<Cancion> cancionesAAgregar) {
+        listaCanciones.addAll(cancionesAAgregar);
+    }
 }

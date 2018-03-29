@@ -1,5 +1,8 @@
 package ar.edu.untref.aydoo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +34,21 @@ public class ReproductorMusicalTest {
 
         Assert.assertFalse(reproductorMusical.tieneLaCancion(miPerroDinamita));
 
+    }
+
+    @Test
+    public void agregarUnaListaLaAgregaAMiListaDeReproduccion() {
+
+        List<Cancion> laMoscaEnLaSopa = new ArrayList<>();
+        Cancion miPerroDinamita = new Cancion();
+        Cancion tareaFina = new Cancion();
+        laMoscaEnLaSopa.add(miPerroDinamita);
+        laMoscaEnLaSopa.add(tareaFina);
+
+        reproductorMusical.agregarListaDeCanciones(laMoscaEnLaSopa);
+
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(miPerroDinamita));
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(tareaFina));
     }
 
 }
