@@ -6,16 +6,18 @@ import org.junit.Test;
 public class IntegracionTest {
 	
 	@Test
-	public void test() {
+	public void ponerBoteEnTablero() {
 		
+		Bote unBote = new Bote();
+		Tablero unTablero = new Tablero();
+		Posicion posicion = new Posicion(1, 1);
 		
-		//A
+		unTablero.ponerBote(unBote, posicion);
 		
-		//A
-		
-		Assert.assertTrue(true);
+		Assert.assertFalse(unTablero.estaDisponible(posicion));
 		
 	}
+	
 
 	
 }
