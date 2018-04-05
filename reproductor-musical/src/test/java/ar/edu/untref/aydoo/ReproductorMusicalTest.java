@@ -12,75 +12,43 @@ public class ReproductorMusicalTest {
     private ReproductorMusical reproductorMusical;
 
     @Before
-    public void inicializarReproductorMusical() {
+    public void inicializacion() {
         reproductorMusical = new ReproductorMusical();
     }
 
     @Test
-    public void agregarUnaCancionAlReproductorLaIncorporaASuLista() {
+    public void agregarCancionLaAgregaAListaDeReproduccion() {
 
-        Cancion cancionParaMiMuerte = new Cancion(5);
+        Cancion cancion = new Cancion();
 
-        reproductorMusical.agregarCancion(cancionParaMiMuerte);
+        reproductorMusical.agregarCancion(cancion);
 
-        Assert.assertNotNull(reproductorMusical.obtenerListaDeCanciones());
-        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionParaMiMuerte));
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancion));
+
     }
 
     @Test
-    public void agregarUnaListaDeCancionesAlReproductorLasIncorporaASuLista() {
+    public void noAgregoUnaCancionEntoncesNoExisteEnMiReproductor() {
 
-        List<Cancion> listaDeCanciones = new ArrayList<>();
-        Cancion cancionParaMiMuerte = new Cancion(5);
-        Cancion miUnicornioAzul = new Cancion(3);
-        listaDeCanciones.add(cancionParaMiMuerte);
-        listaDeCanciones.add(miUnicornioAzul);
+        Cancion miPerroDinamita = new Cancion();
 
-        reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
+        Assert.assertFalse(reproductorMusical.tieneLaCancion(miPerroDinamita));
 
-        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionParaMiMuerte));
-        Assert.assertTrue(reproductorMusical.tieneLaCancion(miUnicornioAzul));
     }
 
     @Test
-    public void agregarUnaCancionYUnaListaDeCancionesAlReproductorLasIncorporaASuLista() {
+    public void agregarUnaListaLaAgregaAMiListaDeReproduccion() {
 
-        Cancion cancionDelElegido = new Cancion(7);
-        List<Cancion> listaDeCanciones = new ArrayList<>();
-        Cancion cancionParaMiMuerte = new Cancion(5);
-        Cancion miUnicornioAzul = new Cancion(3);
-        listaDeCanciones.add(cancionParaMiMuerte);
-        listaDeCanciones.add(miUnicornioAzul);
+        List<Cancion> laMoscaEnLaSopa = new ArrayList<>();
+        Cancion miPerroDinamita = new Cancion();
+        Cancion tareaFina = new Cancion();
+        laMoscaEnLaSopa.add(miPerroDinamita);
+        laMoscaEnLaSopa.add(tareaFina);
 
-        reproductorMusical.agregarCancion(cancionDelElegido);
-        reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
+        reproductorMusical.agregarListaDeCanciones(laMoscaEnLaSopa);
 
-        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionDelElegido));
-        Assert.assertTrue(reproductorMusical.tieneLaCancion(cancionParaMiMuerte));
-        Assert.assertTrue(reproductorMusical.tieneLaCancion(miUnicornioAzul));
-    }
-
-    @Test
-    public void laDuracionTotalDeReproduccionEs0CuandoNoHayListaDeCanciones() {
-
-        int duracionTotalDeReproduccion = reproductorMusical.obtenerDuracionTotalDeReproduccion();
-
-        Assert.assertEquals(duracionTotalDeReproduccion, 0);
-    }
-
-    @Test
-    public void laDuracionTotalDeReproduccionEsLaSumaDeLasDuracionesDeCadaCancion() {
-
-        List<Cancion> listaDeCanciones = new ArrayList<>();
-        Cancion cancionParaMiMuerte = new Cancion(5);
-        Cancion miUnicornioAzul = new Cancion(3);
-        listaDeCanciones.add(cancionParaMiMuerte);
-        listaDeCanciones.add(miUnicornioAzul);
-        reproductorMusical.agregarListaDeCanciones(listaDeCanciones);
-
-        int duracionTotalDeReproduccion = reproductorMusical.obtenerDuracionTotalDeReproduccion();
-
-        Assert.assertEquals(duracionTotalDeReproduccion, 8);
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(miPerroDinamita));
+        Assert.assertTrue(reproductorMusical.tieneLaCancion(tareaFina));
     }
 
 }
